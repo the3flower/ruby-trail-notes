@@ -9,6 +9,7 @@ true                     # boolean literal
 nil                      # nil literal
 
 
+
 ########## Variables ##########
 # Constant Variable
 MY_CONSTANT = 'I am available throughout your app.'
@@ -277,15 +278,20 @@ binding.pry
 
 
 ########## Basic Enumerable Methods ##########
-# Select
+# | | <- This called 'block', Inside the block, you can refer to each element by the variable you put between the pipes
+
+## Select Method
+#
 friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
 friends.select { |friend| friend != 'Brian' } #=> ["Sharon", "Leo", "Leila", "Arun"]
 
-# Reject
+## Reject Method
+#
 friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
 friends.reject { |friend| friend == 'Brian' } #=> ["Sharon", "Leo", "Leila", "Arun"]
 
-# Each Method
+## Each Method
+# if you do something but not puts or print it out, each method will not modify array
 friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
 friends.each { |friend| puts "Hello, " + friend }
 
@@ -298,12 +304,12 @@ friends.each { |friend| puts "Hello, " + friend }
 #=> Hello, Arun
 #=> ["Sharon", "Leo", "Leila", "Brian" "Arun"]
 
-# Map Method 1
+## Map Method 1
 friends = ['Sharon', 'Leo', 'Leila', 'Brian', 'Arun']
 friends.map { |friend| friend.upcase }
 #=> `['SHARON', 'LEO', 'LEILA', 'BRIAN', 'ARUN']`
 
-# Map Method 2
+## Map Method 2
 my_order = ['medium Big Mac', 'medium fries', 'medium milkshake']
 my_order.map { |item| item.gsub('medium', 'extra large') }
 #=> ["extra large Big Mac", "extra large fries", "extra large milkshake"]
