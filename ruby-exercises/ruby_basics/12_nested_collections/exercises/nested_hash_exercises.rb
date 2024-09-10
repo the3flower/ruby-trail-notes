@@ -62,5 +62,9 @@ def find_language_facts(languages, language_name, fact_index = 0)
   #                 initial_release: 'December 4, 1995',
   #                 is_beautiful?: false }
   # }
-  
+  if languages.key?(language_name) && languages[language_name].key?(:facts) && !languages[language_name][:facts].empty?
+    languages[language_name][:facts][fact_index]
+  else
+    nil
+  end
 end

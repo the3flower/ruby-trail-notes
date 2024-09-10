@@ -1,4 +1,4 @@
-##### Data Types #####
+########## Data Types ##########
 'Hello, world!'          # string literal
 375                      # integer literal
 3.141528                 # float literal
@@ -9,22 +9,26 @@ true                     # boolean literal
 nil                      # nil literal
 
 
-##### Variable #####
+########## Variables ##########
 # Constant Variable
 MY_CONSTANT = 'I am available throughout your app.'
+
 # Class Variable
 @@instances = 0
+
 # Instance Variable
 @var = 'I am available throughout the current instance of this class.'
+
 # Local Variable
 var = 'I must be passed around to cross scope boundaries.'
 
 
-##### Different between print and puts, is just \n (newline) #####
+##### Different between print and puts #####
+# `print` does not add a newline (\n) after output, while `puts` does.
+
 print "Hello"
 print "World"
-# Output: 
-# Hello World
+# Output: HelloWorld
 
 puts "Hello"
 puts "World"
@@ -33,12 +37,12 @@ puts "World"
 # World
 
 
-##### Input Commands #####
+########## Input Commands ##########
 gets
 new_string = gets
 
 
-##### Condition Logic #####
+########## Condition Logic ##########
 if attack_by_land == true
   puts "release the goat"
 elsif attack_by_sea == true
@@ -48,13 +52,13 @@ else
 end
 
 
-##### Boolean Logic #####
-5 == 5 #=> true
-5 != 5 #=> false
-5 > 7 #=> false
-5 < 7 #=> true
-7 >= 7 #=> true
-5 <= 7 #=> true
+########## Boolean Logic ##########
+5 == 5  #=> true
+5 != 5  #=> false
+5 > 7   #=> false
+5 < 7   #=> true
+7 >= 7  #=> true
+5 <= 7  #=> true
 5.eql?(5.0) #=> false; although they are the same value, one is an integer and the other is a float
 5.eql?(5)   #=> true
 5 <=> 10    #=> -1 if the value on the left is less than the value on the right;
@@ -62,7 +66,7 @@ end
 10 <=> 5    #=> 1 if the value on the left is greater than the value on the right.
 
 
-##### Logical Operators #####
+########## Logical Operators ##########
 # && and
 if 1 < 2 && 5 < 6
   puts "Party at Kevin's!"
@@ -82,7 +86,8 @@ if 10 < 2 or 5 < 6
 end
 
 
-########## Unless Statements, works in the opposite way as an if statement ##########
+########## Unless Statements ##########
+# works in the opposite way as an if statement 
 age = 19
 puts "Welcome to a life of debt." unless age < 18
 
