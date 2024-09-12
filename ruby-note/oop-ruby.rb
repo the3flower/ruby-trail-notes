@@ -2,6 +2,14 @@
   [Object Oriented Programming]
   - Ruby, almost everything is an object, 
   except for method, blocks and variables.
+  - Class, Method
+  - Composition
+  - Accessor Method (Getter and Setter Method)
+  - Constants
+  - Self
+  - Inheritance
+  - Super
+  - Modules
 
   Principles of OOP:
     Encapsulation: 

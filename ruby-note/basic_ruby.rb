@@ -29,7 +29,7 @@ puts "World"
 #         World
 
 ## Inputs Command
-# use when you want to get input
+# use when you want to get input fron keyboard
 gets
 new_string = gets
 
