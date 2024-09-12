@@ -1,4 +1,5 @@
-########## Data Types ##########
+## Data Types
+#
 'Hello, world!'          # string literal
 375                      # integer literal
 3.141528                 # float literal
@@ -8,42 +9,32 @@ true                     # boolean literal
 :sym                     # symbol literal
 nil                      # nil literal
 
+## Varibles
+#
+local_variable      # Local variables
+@instance_variable  # Instance variables
+@@class_variable    # Class variables
+$global_variable    # Global variables
+CONSTANT_VARIABLE   # Constants variables
 
-
-########## Variables ##########
-# Constant Variable
-MY_CONSTANT = 'I am available throughout your app.'
-
-# Class Variable
-@@instances = 0
-
-# Instance Variable
-@var = 'I am available throughout the current instance of this class.'
-
-# Local Variable
-var = 'I must be passed around to cross scope boundaries.'
-
-
-##### Different between print and puts #####
-# `print` does not add a newline (\n) after output, while `puts` does.
-
+## Print & Puts
+# puts will follow with newline (\n)
 print "Hello"
 print "World"
 # Output: HelloWorld
 
 puts "Hello"
 puts "World"
-# Output:
-# Hello
-# World
+# Output: Hello
+#         World
 
-
-########## Input Commands ##########
+## Inputs Command
+# use when you want to get input
 gets
 new_string = gets
 
-
-########## Condition Logic ##########
+## Condition Logic
+#
 if attack_by_land == true
   puts "release the goat"
 elsif attack_by_sea == true
@@ -52,8 +43,8 @@ else
   puts "release Kevin the octopus"
 end
 
-
-########## Boolean Logic ##########
+## Boolean Logic
+#
 5 == 5  #=> true
 5 != 5  #=> false
 5 > 7   #=> false
@@ -99,7 +90,8 @@ else
 end
 
 
-########## Loops ##########
+## Loops
+# 
 # Loop
 i = 0
 loop do

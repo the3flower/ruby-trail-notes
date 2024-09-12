@@ -1,7 +1,11 @@
 =begin
   [Object Oriented Programming]
   - Ruby, almost everything is an object, 
-  except for method, blocks and variables. 
+  except for method, blocks and variables.
+
+  Principles of OOP:
+    Encapsulation: 
+
 =end
 
 ## Class
@@ -60,7 +64,7 @@ end
 my_car = Car.new
 my_car.start  # Engine is an integral part of Car
 
-## Acecssor Method (1)
+## Acecssor Method (1) (manually)
 # Getter & Setter
 # used to 'retrieve' and 'modify' an object attribute after initialize
 class Person
@@ -69,7 +73,7 @@ class Person
     @name = name
     @age = age
   end
-
+a
   # Getter method for @name
   def name
     @name
@@ -149,5 +153,133 @@ end
 sparky = GoodDog.new("Sparky", 4)
 puts sparky.age             # => 28
 
-## Self
+## Self (1)
 # refer to getter & setter method
+# built-in for getter and setter method:
+#   attr_reader: getter method
+#   attr_writer: setter method
+#   attr_accessor: getter and setter method
+# * need to have setter and getter method
+class GoodDog
+  attr_accessor :name, :height, :weight # <- This is getter and setter method in one
+
+  def initialize(n, h, w)
+    self.name   = n
+    self.height = h
+    self.weight = w
+  end
+
+  def change_info(n, h, w)
+    self.name   = n
+    self.height = h
+    self.weight = w
+  end
+
+  def info
+    "#{self.name} weighs #{self.weight} and is #{self.height} tall."
+  end
+end
+
+## Self (2)
+# 'self' define 'class method' (NOT the same as 'Class')
+# 
+class MyAwesomeClass
+  def self.this_is_a_class_method # <- class method here!
+    "I'm a class method!"
+  end
+end
+
+# Calling the class method
+# this can called directly on the class without creating an instance of the class
+puts MyAwesomeClass.this_is_a_class_method   # Output: "I'm a class method!"
+
+## Self (3)
+# self example
+class BankAccount
+  def initialize(owner, balance)
+    @owner = owner
+    self.balance = balance  # This will calls the setter method to initialize balance with validation
+  end
+
+  # Getter method for @balance
+  def balance
+    @balance
+  end
+
+  # Setter method for @balance, with validation
+  def balance=(new_balance)
+    if new_balance >= 0
+      @balance = new_balance  # Only set balance if it's non-negative
+    else
+      puts "Balance cannot be negative"
+    end
+  end
+end
+
+# Creating an account with a valid initial balance
+account = BankAccount.new("Alice", 100)
+puts account.balance  # Calls the getter method, Output: 100
+
+# Trying to set a negative balance
+account.balance = -50  # Calls the setter method, Output: "Balance cannot be negative"
+
+=begin
+  Self vs @, how different?
+    self.variable: 
+    - Triggers the setter method, calling self and it will triggers the setter method
+    - Additional Controlled
+    - Built-in Getter and Setter Method, attr_reader, attr_writer, attr_accessor
+    - Requires Getter and Setter method
+    @variable: 
+    - Directly accessing instance variable 
+=end
+
+## Inheritance
+# a class 'inherits' behavior from another class
+# the '<' symbol'
+class Animal
+  def speak
+    "Hello!"
+  end
+end
+
+class GoodDog < Animal # <- Inheritance, GoodDog class 'inheriting' from Animal 
+end
+
+class Cat < Animal # <- Inheritance
+end
+
+sparky = GoodDog.new
+paws = Cat.new
+puts sparky.speak           # => Hello!
+puts paws.speak             # => Hello!
+
+## Super
+# used with ingeritance
+# use 'super' to invoke the method from the superclass
+class Animal
+  def speak
+    "Hello!"
+  end
+end
+
+class GoodDog < Animal
+  def speak
+    super + " from GoodDog class" # <- super is here! GoodDog is subclass of Animal (superclass)
+  end
+end
+
+sparky = GoodDog.new
+sparky.speak        # => "Hello! from GoodDog class"
+
+## Modules
+# allow you to share fumctionality betweem classes
+module Flyable # <- module is here!
+  def fly
+    "I can fly!"
+  end
+end
+
+class Bird
+  include Flyable
+end
