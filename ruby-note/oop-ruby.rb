@@ -13,7 +13,6 @@
 
   Principles of OOP:
     Encapsulation: 
-
 =end
 
 ## Class

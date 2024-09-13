@@ -2,7 +2,7 @@
   [Project Management]
   - require and require_relative
   - Gem, Gemfile, Bundler
-  - RuboCop (Ruby gem), code formatter
+  - RuboCop(Ruby gem), code formatter
 =end
 
 ## require and require_relative
@@ -22,7 +22,7 @@ require_relative 'utils/helper'  # Loads the 'helper.rb' file in the 'utils' dir
 ## Gem
 #  - packages Ruby
 #  - use gem with 'require'
-#  command:
+#  Command:
 #   $ gem install rails
 
 ## Gemfile
@@ -37,7 +37,7 @@ gem 'rspec', '~> 3.10'  # RSpec for testing
 
 ## Bundler
 #  - dependency manager for Ruby projects
-#  command:
+#  Command:
 #   $ bundle install
 
 ## RuboCop (Ruby gem)
@@ -49,5 +49,3 @@ gem 'rspec', '~> 3.10'  # RSpec for testing
 #         $ gem install rubocop
 #   (3) running (in the root of project)
 #         $ rubocop
-
-
