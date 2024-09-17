@@ -2,6 +2,7 @@
   [Rails Knowledge Note]
   - Routing
   - Controller
+  - View
 =end
 
 ## SOME CONCERN!!
@@ -126,3 +127,79 @@ def create
     render 'new'  # Re-rendering the 'new' template, no redirect happens
   end
 end
+
+## View
+#  - Template by uses the data provided by the 'controller'
+#  - Handle Presentation Layer
+#  - 'View' file structured(file name) by Controller action (index, show, new, edit, etc.)
+#  - Example Directory: app/views/controller_name/action_name.html.erb
+#    > controller_name is the name of the controller the view is linked to
+#    > action_name.html.erb is the corresponding method inside the controller
+#  ** To use an instance variable from your view, just call it the same way you would in the controller
+
+# Layouts
+# - Directory: app/views/layouts
+# - Just a shell around the individual page.
+#   > use #yield method to insert layout to the page.
+
+# Preprocessors
+# - Execute Ruby code inside HTML.
+# - <%= %> tags, The Embedded Ruby (ERB).
+# 
+# Example:
+# <% if current_user.signed_in? %>
+# <ul>
+#   <% @users.each do |user| %>
+#     <li><%= user.first_name %></li>
+#   <% end %>
+# </ul>
+# <% else %>
+# <strong>You must sign in!</strong>
+# <% end %>
+
+# View Partial
+# - Render within another view.
+# - Reusing view logic
+# - Name View Partial file: _name.html.erb (need underscore)
+# - How to use with another file: <%= render 'name' %> (need: render '')
+# 
+# Example:
+# Create a Partial: _form.html.erb
+# <!-- app/views/users/_form.html.erb -->
+# <%= form_with model: @user do |f| %>
+#   <div class="field">
+#     <%= f.label :name %>
+#     <%= f.text_field :name %>
+#   </div>
+#   <div class="field">
+#     <%= f.label :email %>
+#     <%= f.text_field :email %>
+#   </div>
+#   <div class="actions">
+#     <%= f.submit %>
+#   </div>
+# <% end %>
+# 
+# Use the Partial in Another View: register.html.erb
+# <!-- app/views/users/register.html.erb -->
+# <h1>Register New User</h1>
+# <%= render 'form' %>  <!-- This renders the _form.html.erb partial -->
+
+# Implicit partials
+# - Render based on the object or collection you pass to render.
+# - Automatically infers the partial name based on the object
+# - How to use: <%= render @name %>
+# 
+# Example: 
+# <!-- app/views/users/index.html.erb -->
+# <h1>All Users</h1>
+# <%= render @users %>  <!-- Implicitly renders the _user.html.erb partial for each user in @users -->
+
+# Asset Tags (helper method)
+# - Easy to include external files (assets) like stylesheets, JavaScript, and images in your HTML views.
+# 
+# Example (for HTML):
+# <%= stylesheet_link_tag 'application', media: 'all' %>
+# * will generate: 
+# <link rel="stylesheet" media="all" href="/assets/application.css">
+
