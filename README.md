@@ -11,7 +11,11 @@ This repository serves as a collection of my notes, exercises, and projects as I
   
 - **ruby-project**: A portfolio of practice projects built to enhance my Ruby skills. These projects are designed to apply concepts learned and demonstrate practical implementation.
 
-- **my_first_rails**: A portfolio of rails project practicing from The Odin Project
+- **my_first_rails**: A portfolio of Rails projects practicing from The Odin Project.
+
 ---
 
 Feel free to explore and follow along with my progress as I dive deep into Ruby and Ruby on Rails!
+
+### Additional Resources
+For more insights on Ruby best practices, check out [Principles of Ruby - Style Guide](https://github.com/rubocop/ruby-style-guide#if-vs-unless) from RuboCop.
